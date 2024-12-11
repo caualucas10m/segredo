@@ -40,37 +40,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Remover a altura fixa para deixar a imagem ajustável */
-    margin-bottom: 20px; /* Aproxima a imagem do título */
+    height: auto;
+    margin-bottom: 30px; /* Aproxima a imagem do título */
     width: 100%;
 }
 
 /* Imagem Responsiva */
 img {
-    width: 80%;            /* A imagem ocupará 80% da largura do contêiner */
-    max-width: 320px;      /* Limita a largura máxima da imagem */
+    width: 85%;            /* A imagem ocupará 85% da largura do contêiner */
+    max-width: 350px;      /* Limita a largura máxima da imagem */
     height: auto;
     object-fit: contain;
 }
 
 /* Botão Responsivo */
 .posi {
-    margin-top: 10px;      /* Aproxima o botão da imagem */
+    margin-top: 15px;      /* Aproxima o botão da imagem */
     display: flex;
     justify-content: center;
 }
 
 button {
     position: relative;
-    padding: 0.6rem 1.3rem;
-    min-width: 8rem;
+    padding: 0.7rem 1.5rem;
+    min-width: 9rem;
     border: 1px solid #c12b4e;
     border-radius: 4px;
     overflow: hidden;
     color: var(--text-color);
     font-family: sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.4rem;
+    font-size: 1rem;       /* Aumenta o tamanho da fonte */
+    line-height: 1.5rem;   /* Ajusta a altura da linha para um melhor ajuste */
     background: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -90,52 +90,52 @@ button:focus {
 /* Estilos para o título h1 */
 .po h1 {
     font-family: 'Arial', sans-serif;
-    font-size: 1.8rem;     /* Aumenta um pouco o tamanho do título */
+    font-size: 2rem;     /* Aumenta o tamanho do título */
     color: var(--cor-principal);
     text-align: center;
-    margin-bottom: 10px;    /* Aproxima o título do conteúdo abaixo */
+    margin-bottom: 15px;  /* Aproxima o título do conteúdo abaixo */
 }
 
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
     img {
-        width: 85%;         /* A imagem ocupará 85% da largura em telas menores */
-        max-width: 300px;   /* Limita a largura máxima da imagem */
+        width: 90%;         /* A imagem ocupará 90% da largura em telas menores */
+        max-width: 320px;   /* Limita a largura máxima da imagem */
     }
 
     button {
-        font-size: 0.85rem;
-        padding: 0.6rem 1.3rem;
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
     }
 
     .posi {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     h1 {
-        font-size: 1.6rem;  /* Ajusta o tamanho do título em telas menores */
-        margin-bottom: 10px; /* Ajusta a margem inferior em telas menores */
+        font-size: 1.8rem;  /* Aumenta o tamanho do título em telas menores */
+        margin-bottom: 15px; /* Ajusta a margem inferior em telas menores */
     }
 }
 
 @media (max-width: 480px) {
     img {
         width: 90%;
-        max-width: 280px;  /* Limita a largura máxima da imagem em telas muito pequenas */
+        max-width: 300px;  /* Limita a largura máxima da imagem em telas muito pequenas */
     }
 
     button {
-        font-size: 0.8rem;
-        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+        padding: 0.6rem 1.3rem;
     }
 
     .posi {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     h1 {
-        font-size: 1.4rem;  /* Ajusta o tamanho do título em telas pequenas */
-        margin-bottom: 10px; /* Ajusta a margem inferior em telas muito pequenas */
+        font-size: 1.6rem;  /* Aumenta o tamanho do título em telas pequenas */
+        margin-bottom: 15px; /* Ajusta a margem inferior em telas muito pequenas */
     }
 }
 
