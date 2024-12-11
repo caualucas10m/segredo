@@ -11,13 +11,18 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Desabilita o zoom */
+html {
+    touch-action: manipulation;
 }
 
 /* Body e conteúdo centralizado */
@@ -35,40 +40,39 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* A altura ocupa 100% da tela */
+    height: 100vh;
     width: 100%;
 }
 
 /* Imagem Responsiva */
 img {
-    width: 100%;            /* A imagem ocupará a largura total do contêiner */
-    max-width: 500px;       /* Limita a largura máxima da imagem */
-    height: auto;           /* Mantém a proporção da imagem */
-    object-fit: contain;    /* A imagem se ajusta sem cortar */
+    width: 90%;            /* A imagem ocupará 90% da largura do contêiner */
+    max-width: 400px;      /* Limita a largura máxima da imagem */
+    height: auto;
+    object-fit: contain;
 }
 
 /* Botão Responsivo */
 .posi {
-    margin-top: -200px;      /* Ajusta a posição do botão para cima */
+    margin-top: -150px;      /* Ajusta a posição do botão para cima */
     display: flex;
-    justify-content: center; /* Centraliza o botão */
+    justify-content: center;
 }
 
 button {
     position: relative;
-    padding: 0.825rem 1.85rem;
-    min-width: 10rem;
-    border: 1px solid #c12b4e; /* cor do botão */
+    padding: 0.7rem 1.5rem;
+    min-width: 8rem;
+    border: 1px solid #c12b4e;
     border-radius: 4px;
     overflow: hidden;
     color: var(--text-color);
     font-family: sans-serif;
-    font-size: 1rem;
-    line-height: 1.85rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
     background: none;
-    -webkit-font-smoothing: antialiased;
     cursor: pointer;
-    transition: all 0.3s ease; /* Transição suave para efeitos de hover */
+    transition: all 0.3s ease;
 }
 
 /* Efeitos de hover no botão */
@@ -82,52 +86,53 @@ button:focus {
     box-shadow: 0 0 0 3px #5e7898;
 }
 
-/* Botão animado */
-button::before,
-button::after {
-    display: block;
-    position: absolute;
-    pointer-events: none;
-}
-
-button::before {
-    top: 0;
-    left: 0;
-    z-index: 3;
-    padding: 0.625rem 0;
-    width: 100%;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.25em;
+/* Estilos para o título h1 */
+.po h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: var(--cor-principal);
     text-align: center;
-    opacity: 0;
-    transition: opacity ease-out .1s;
-    content: attr(data-text);
+    margin-top: 10%;
 }
 
-button::after {
-    top: 50%;
-    left: 50%;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 100%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 10rem var(--link-color);
-    transition: ease-out .3s;
-    transition-properties: padding, width;
-    content: '';
-}
-
-/* Quando o botão é clicado ou recebe foco */
-button:focus,
-button:hover {
-    button::before {
-        opacity: 1;
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    img {
+        width: 85%;
+        max-width: 350px;
     }
 
-    button::after {
-        width: 0;
-        height: 0;
+    button {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.4rem;
+    }
+
+    .posi {
+        margin-top: -100px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    button {
+        font-size: 0.7rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .posi {
+        margin-top: -80px;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho do título em telas pequenas */
     }
 }
 
@@ -164,78 +169,4 @@ body.love::before {
         opacity: 0;
         transform: translate(-50%, -50%) scale(1);
     }
-}
-
-/* Responsividade para dispositivos menores */
-@media (max-width: 768px) {
-    img {
-        width: 90%; /* Imagem ocupará 90% da largura em telas menores */
-    }
-
-    button {
-        font-size: 0.9rem;
-        padding: 0.8rem 1.5rem;
-    }
-
-    .posi {
-        margin-top: -20px; /* Ajuste do botão em telas menores */
-    }
-}
-
-@media (max-width: 480px) {
-    img {
-        width: 100%; /* Imagem ocupará 100% da largura em telas muito pequenas */
-    }
-
-    button {
-        font-size: 0.8rem;
-        padding: 0.6rem 1.2rem;
-    }
-
-    .posi {
-        margin-top: -10px; /* Ajuste do botão em telas muito pequenas */
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;  /* Reduz o tamanho da fonte em telas menores */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2rem;  /* Reduz ainda mais o tamanho da fonte em telas pequenas */
-    }
-  }
-
-/* Estilos para o título h1 */
-.po h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 3rem;
-    color: var(--cor-principal);
-    text-align: center;
-    margin-top: 10%; /* Ajuste o valor conforme necessário para o título */
-}
-
-/* Estilos para a imagem */
-.posicao {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    height: auto;            /* Remover a altura fixa de 100vh */
-}
-
-.posicao img {
-    width: 100%;             /* A imagem vai se ajustar à largura do contêiner */
-    max-width: 500px;        /* Limita a largura máxima da imagem */
-    height: auto;            /* Ajusta a altura automaticamente para manter a proporção */
-    object-fit: contain;     /* A imagem não será cortada e manterá a proporção */
-}
-
-/* Estilos para o botão */
-.posi {
-    margin-top: 1px; /* Ajuste a margem superior para aproximar o botão do conteúdo acima */
-    display: flex;
-    justify-content: center; /* Centraliza o botão */
 }
