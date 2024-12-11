@@ -40,28 +40,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto; /* Remover a altura fixa para deixar a imagem ajustável */
+    margin-bottom: 20px; /* Aproxima a imagem do título */
     width: 100%;
 }
 
 /* Imagem Responsiva */
 img {
-    width: 90%;            /* A imagem ocupará 90% da largura do contêiner */
-    max-width: 400px;      /* Limita a largura máxima da imagem */
+    width: 80%;            /* A imagem ocupará 80% da largura do contêiner */
+    max-width: 350px;      /* Limita a largura máxima da imagem */
     height: auto;
     object-fit: contain;
 }
 
 /* Botão Responsivo */
 .posi {
-    margin-top: -150px;      /* Ajusta a posição do botão para cima */
+    margin-top: 10px;      /* Aproxima o botão da imagem */
     display: flex;
     justify-content: center;
 }
 
 button {
     position: relative;
-    padding: 0.7rem 1.5rem;
+    padding: 0.6rem 1.4rem;
     min-width: 8rem;
     border: 1px solid #c12b4e;
     border-radius: 4px;
@@ -92,14 +93,14 @@ button:focus {
     font-size: 2rem;
     color: var(--cor-principal);
     text-align: center;
-    margin-top: 10%;
+    margin-bottom: 10px; /* Aproxima o título do conteúdo abaixo */
 }
 
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
     img {
         width: 85%;
-        max-width: 350px;
+        max-width: 320px;
     }
 
     button {
@@ -108,11 +109,12 @@ button:focus {
     }
 
     .posi {
-        margin-top: -100px;
+        margin-top: 10px;
     }
 
     h1 {
-        font-size: 1.8rem; /* Ajusta o tamanho do título em telas menores */
+        font-size: 1.8rem;
+        margin-bottom: 5px; /* Reduz a margem inferior em telas menores */
     }
 }
 
@@ -128,11 +130,12 @@ button:focus {
     }
 
     .posi {
-        margin-top: -80px;
+        margin-top: 5px;
     }
 
     h1 {
-        font-size: 1.5rem; /* Reduz ainda mais o tamanho do título em telas pequenas */
+        font-size: 1.5rem;
+        margin-bottom: 5px; /* Reduz ainda mais a margem inferior em telas pequenas */
     }
 }
 
